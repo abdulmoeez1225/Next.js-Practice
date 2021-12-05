@@ -22,7 +22,7 @@ const PageNotFound = () => {
       }}
     >
       <div style={{ width: "50%" }}>
-        <div id="animation">404</div>
+        <div id="animation" />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const UserList = ({ users }) => {
     <div>
       <h1>List of User</h1>
 
-      {users.map((item, index) => {
+      {users?.map((item, index) => {
         return (
           <div key={item.id}>
             <User user={item} />
@@ -19,7 +19,7 @@ const UserList = ({ users }) => {
 
 export default UserList;
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
 
   const data = await response.json();
@@ -30,4 +30,4 @@ export async function getStaticProps() {
       users: data,
     },
   };
-}
+};
