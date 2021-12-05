@@ -2,16 +2,16 @@ import React from "react";
 
 import Link from "next/link";
 
-const index = ({ posts }) => {
+const index = ({ products }) => {
   return (
     <div>
       <h1>List of Posts</h1>
-      {posts?.map((item, index) => {
+      {products?.map((item, index) => {
         return (
           <div key={index}>
-            <Link href={`posts/${item.id}`} passHref>
+            <Link href={`products/${item.id}`} passHref>
               <h2>
-                {item.id} {item.title}
+                {item.id} {item.title} {item.price}
               </h2>
             </Link>
             <hr />
@@ -25,13 +25,16 @@ const index = ({ posts }) => {
 export default index;
 
 export const getStaticProps = async () => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  console.log("Generating / Regenerating product list");
+
+  const response = await fetch("http://localhost:4000/products");
   const data = await response.json();
 
   return {
     props: {
       // posts: data.slice(0, 100),
-      posts: data,
+      products: data,
     },
+    revalidate: 10,
   };
 };

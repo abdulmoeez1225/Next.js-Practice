@@ -1,7 +1,7 @@
 // import { useRouter } from "next/router";
 import React from "react";
 
-const Post = ({ post }) => {
+const Post = ({ product }) => {
   // const router = useRouter();
 
   // if (router.isFallback) {
@@ -11,9 +11,9 @@ const Post = ({ post }) => {
   return (
     <div>
       <h2>
-        {post.id} {post.title}
+        {product.id} {product.title} {product.price}
       </h2>
-      <p>{post.body}</p>
+      <p>{product.descritpion}</p>
     </div>
   );
 };
@@ -21,7 +21,7 @@ const Post = ({ post }) => {
 export default Post;
 
 export const getStaticPaths = async () => {
-  const response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+  const response = await fetch(`http://localhost:4000/products`);
 
   const data = await response.json();
 
@@ -34,13 +34,13 @@ export const getStaticPaths = async () => {
   return {
     paths: [
       {
-        params: { postid: "1" },
+        params: { productid: "1" },
       },
       {
-        params: { postid: "2" },
+        params: { productid: "2" },
       },
       {
-        params: { postid: "3" },
+        params: { productid: "3" },
       },
     ],
     // paths,
@@ -50,9 +50,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const { params } = context;
-
+  console.log(`Generating page page/${params.productid}`);
   const response = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${params.postid}`
+    `http://localhost:4000/products/${params.productid}`
   );
 
   const data = await response.json();
@@ -61,11 +61,12 @@ export const getStaticProps = async (context) => {
     return { notFound: true };
   }
 
-  console.log(`Generating page page/${params.postid}`);
+  console.log(`Generating page page/${params.productid}`);
 
   return {
     props: {
-      post: data,
+      product: data,
     },
+    revalidate: 10,
   };
 };
