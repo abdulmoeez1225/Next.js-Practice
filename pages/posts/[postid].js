@@ -57,6 +57,10 @@ export const getStaticProps = async (context) => {
 
   const data = await response.json();
 
+  if (!data.id) {
+    return { notFound: true };
+  }
+
   console.log(`Generating page page/${params.postid}`);
 
   return {
