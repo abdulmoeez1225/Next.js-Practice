@@ -1,11 +1,13 @@
 import React from "react";
 
 import Link from "next/link";
+import NewsArticleList from "../news";
 
 const index = ({ posts }) => {
   return (
     <div>
       <h1>List of Posts</h1>
+      <NewsArticleList />
       {posts?.map((item, index) => {
         return (
           <div key={index}>

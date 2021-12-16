@@ -1,32 +1,77 @@
 {
-  "products": [
+  "dashboard": {
+    "post": 1,
+    "like": 10,
+    "followers": 10,
+    "following": 20
+  },
+  "news": [
     {
       "id": 1,
-      "title": "Product 1",
-      "product": "abc",
-      "price": 500,
-      "descritpion": "This is the product description "
+      "title": "News 1",
+      "content": "This is Content one",
+      "category": "News"
     },
     {
       "id": 2,
-      "title": "Product 2",
-      "product": "def",
-      "price": 1000,
-      "descritpion": "This is the product description "
+      "title": "News 2",
+      "content": "This is Content two",
+      "category": "sports"
     },
     {
       "id": 3,
-      "title": "Product 3",
-      "product": "ghi",
-      "price": 1000,
-      "descritpion": "This is the product description "
+      "title": "News 3",
+      "content": "This is Content three",
+      "category": "News"
     },
     {
       "id": 4,
-      "title": "Product 4",
-      "product": "jjj",
-      "price": 1000,
-      "descritpion": "This is the product description "
+      "title": "News 4",
+      "content": "This is Content four",
+      "category": "sports"
+    },
+    {
+      "id": 5,
+      "title": "News 5",
+      "content": "This is Content five",
+      "category": "News"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "News 1",
+      "description": "This is Content one",
+      "category": "News",
+      "date": "2018-01-01"
+    },
+    {
+      "id": 2,
+      "title": "News 2",
+      "description": "This is Content one",
+      "category": "sports",
+      "date": "2018-01-01"
+    },
+    {
+      "id": 3,
+      "title": "News 3",
+      "description": "This is Content one",
+      "category": "News",
+      "date": "2018-01-01"
+    },
+    {
+      "id": 4,
+      "title": "News 4",
+      "description": "This is Content one",
+      "category": "sports",
+      "date": "2018-01-01"
+    },
+    {
+      "id": 5,
+      "title": "News 5",
+      "description": "This is Content one",
+      "category": "News",
+      "date": "2018-01-01"
     }
   ]
 }
