@@ -2,8 +2,18 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Home() {
+  const user = process.env.DB_USERNAME;
+
+  const password = process.env.DB_PASSWORD;
+
+  useEffect(() => {
+    console.log({ user, password });
+    console.log(process.env.NEXT_PUBLIC_ANALYTIC_ID);
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>

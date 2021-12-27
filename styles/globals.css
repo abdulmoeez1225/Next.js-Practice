@@ -14,3 +14,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.layout-header,
+.layout-footer {
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  background-color: cyan;
+  color: orange;
+  padding: 10px;
+}
